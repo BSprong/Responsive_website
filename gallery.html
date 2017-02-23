@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html ng-app="gallery">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Foto gallery</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="foto gallery van de sneeuw in Nederland" />
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_slider.css">
+	
+	<!-- AngularJS-->
+	<script src="http://code.angularjs.org/1.2.0rc1/angular.js"></script>
+	<script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
+	<script src="js/app.js"></script>
+	
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body ng-controller="MainCtrl">
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">Foto gallery</a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="gallery.html">Gallery</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+
+	
+	<div id="fh5co-gallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>gallery</h2>
+					<h3>Hieronder een foto gallery van afbeeldingen die gemaakt zijn tijdens de winterperiode in Nederland</h3>
+					<div class="container slider">
+					<!-- enumerate all photos -->
+				<img ng-repeat="photo in photos" width="80%" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
+				<!-- prev / next controls -->
+				<a class="arrow prev" href="" ng-click="showPrev()"></a>
+					<a class="arrow next" href="" ng-click="showNext()"></a>
+				<!-- extra navigation controls -->
+				<ul class="nav">
+			<li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+		<img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
+</li>
+</ul>
+</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<footer id="fh5co-footer" class="fh5co-bg" style="background-image: url(images/img_bg_1.jpg);" role="contentinfo">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h3>Over sneeuw in Nederland</h3>
+					<p>De website is gemaakt om te laten zien hoe het in Nederland is als er sneeuw is.</p>
+				</div>
+				<div class="col-md-8">
+					<p>
+						<img class="image" src="images/design opdracht week 5 sneeuw3.jpg"  width="300" alt="sneeuw in NL" />
+					</p>
+				</div>
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy;  All Rights Reserved.</small> 
+					</p>
+					
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><img src="images/Arrow_top.png" width="5%" alt="arrow top" /></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
